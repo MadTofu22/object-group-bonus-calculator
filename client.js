@@ -41,3 +41,29 @@ const employees = [
 // Ask questions when you don't.
 
 console.log( employees );
+
+// step 1 - loop over employee array in a function
+function processBonuses (array) {
+
+  //loop through the array and calculate the bonuse then log it out to the console
+  for (let employee of array) {
+    bonus percentage = calcPercent(employee)//process the bonus
+    bonusC
+    console.log(''); //displays the processed bonus
+  }
+}
+
+// step 2 - create a function that one employee object and returns a new object with the following properties
+// name = employees name
+// bonusPercentage = the bonus percent the employee is to receive
+// totalCompensation = base annual pay + bonus
+// totalBonus = the total bonus rounded to the nearest dollar
+
+//step 3 bonus calculation
+//rating <= 2 gets bonus=false
+//rating = 3 gets bonus of 4% of annualSalary
+//rating = 4 gets bonus of 6% of annualSalary
+//rating = 5 gets bonus of 10% of annualSalary
+//employeeNumber = 4 digits long bonus += 5% of annualSalary
+//anualSalary > 65,000 get bonus -= 1%
+//bonus has to be between 0 and 13%
