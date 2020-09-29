@@ -58,20 +58,7 @@ function processBonuses (array) {
 
 function calcPercent () {
 
-  
-}
-
-function createEmployeeObject () {
-
-  
-}
-// step 2 - create a function that one employee object and returns a new object with the following properties
-// name = employees name
-// bonusPercentage = the bonus percent the employee is to receive
-// totalCompensation = base annual pay + bonus
-// totalBonus = the total bonus rounded to the nearest dollar
-
-//step 3 bonus calculation
+  //step 3 bonus calculation
 //rating <= 2 gets bonus=false
 //rating = 3 gets bonus of 4% of annualSalary
 //rating = 4 gets bonus of 6% of annualSalary
@@ -79,3 +66,14 @@ function createEmployeeObject () {
 //employeeNumber = 4 digits long bonus += 5% of annualSalary
 //anualSalary > 65,000 get bonus -= 1%
 //bonus has to be between 0 and 13%
+  
+}
+
+function createEmployeeObject () {
+
+  // step 2 - create a function that one employee object and returns a new object with the following properties
+// name = employees name
+// bonusPercentage = the bonus percent the employee is to receive
+// totalCompensation = base annual pay + bonus
+// totalBonus = the total bonus rounded to the nearest dollar
+}
