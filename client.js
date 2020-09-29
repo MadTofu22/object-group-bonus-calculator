@@ -47,11 +47,15 @@ function processBonuses (array) {
 
   //loop through the array and calculate the bonuse then log it out to the console
   for (let employee of array) {
-    bonus percentage = calcPercent(employee)//process the bonus
-    bonusC
-    console.log(''); //displays the processed bonus
+    let bonusPercent = calcPercent(employee); //process the bonus and store to a variable
+    let totalBonus = Math.round(employee.annualSalary*bonusPercent); //multiple the salary times the bonus percent and rounds to the nearest dollar
+    let totalCompensation = employee.annualSalary + totalBonus; //
+    
+    let newObject = createEmployeeObject(employee.name, bonusPercent, totalCompensation, totalBonus); //Creates the new object with the calculated bonuses
+    console.log(newObject); //displays the processed bonus
   }
 }
+
 
 // step 2 - create a function that one employee object and returns a new object with the following properties
 // name = employees name
