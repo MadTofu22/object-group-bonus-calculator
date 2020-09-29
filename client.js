@@ -56,7 +56,15 @@ function processBonuses (array) {
   }
 }
 
+function calcPercent () {
 
+  
+}
+
+function createEmployeeObject () {
+
+  
+}
 // step 2 - create a function that one employee object and returns a new object with the following properties
 // name = employees name
 // bonusPercentage = the bonus percent the employee is to receive
