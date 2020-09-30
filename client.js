@@ -70,16 +70,39 @@ function processBonuses (array) {
   }
 }
 
-function calcPercent () {
+function calcPercent (employee) {
 
+  let percent = 0;
   //step 3 bonus calculation
-//rating <= 2 gets bonus=false
-//rating = 3 gets bonus of 4% of annualSalary
-//rating = 4 gets bonus of 6% of annualSalary
-//rating = 5 gets bonus of 10% of annualSalary
-//employeeNumber = 4 digits long bonus += 5% of annualSalary
-//anualSalary > 65,000 get bonus -= 1%
-//bonus has to be between 0 and 13%
+  if (employee.reviewRating <= 2) {
+    //rating <= 2 gets bonus of 0%
+    percent = 0;
+  }
+  else if (employee.reviewRating == 3) {
+    //rating = 3 gets bonus of 4% of annualSalary
+    percent = 0.04;
+  }
+  else if (employee.reviewRating == 4) {
+    //rating = 4 gets bonus of 6% of annualSalary
+    percent = 0.06;
+  }
+  else if (employee.reviewRating == 5) {
+    //rating = 5 gets bonus of 10% of annualSalary
+    percent = 0.1;
+  }
+  else {
+    console.log('Invalid employee.reviewRating');
+  }
+  
+  if (employee.employeeNumber.length == 4) {
+    //employeeNumber = 4 digits long bonus += 5% of annualSalary
+    percent += .05;
+    console.log('percent', percent);
+  }
+  
+  return percent;
+  //anualSalary > 65,000 get bonus -= 1%
+  //bonus has to be between 0 and 13%
   
 }
 
