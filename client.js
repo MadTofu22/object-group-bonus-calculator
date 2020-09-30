@@ -43,12 +43,15 @@ const employees = [
 console.log( employees );
 
 function createEmployeeObject (employee) {
+  
+  let percent = calcPercent(employee);
   let person={
-    bonusPercent: calcPercent(employee),
-    totalBonus: Math.round(employee.annualSalary * calcPercent(employee) ),
-    totalCompensation: employee.annualSalary * Math.round(employee.annualSalary * calcPercent(employee) ),
+    bonusPercent: percent,
+    totalBonus: Math.round(employee.annualSalary * percent ),
+    totalCompensation: Number(employee.annualSalary) + Math.round(employee.annualSalary * percent),
     name: employee.name
   }
+  
   return person;
 
 
@@ -94,15 +97,26 @@ function calcPercent (employee) {
     console.log('Invalid employee.reviewRating');
   }
   
-  if (employee.employeeNumber.length == 4) {
+  if (employee.employeeNumber.length === 4) {
     //employeeNumber = 4 digits long bonus += 5% of annualSalary
-    percent += .05;
-    console.log('percent', percent);
+    percent += 0.05;
+    console.log('checking employee number length, percent', percent, 'employee.employeeNumber.length', employee.employeeNumber.length);
+  }
+
+  if (Number(employee.annualSalary) > 65000) {
+    //anualSalary > 65,000 get bonus -= 1%
+    percent -= 0.01;
+  }
+  
+  //bonus has to be between 0 and 13%
+  if (percent < 0) {
+    percent = 0;
+  }
+  else if (percent > 0.13) {
+    perecent = 0.13;
   }
   
   return percent;
-  //anualSalary > 65,000 get bonus -= 1%
-  //bonus has to be between 0 and 13%
-  
 }
 
+processBonuses(employees);
