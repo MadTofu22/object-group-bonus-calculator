@@ -42,6 +42,23 @@ const employees = [
 
 console.log( employees );
 
+function createEmployeeObject (employee) {
+  let person={
+    bonusPercent: calcPercent(employee),
+    totalBonus: Math.round(employee.annualSalary * calcPercent(employee) ),
+    totalCompensation: employee.annualSalary * Math.round(employee.annualSalary * calcPercent(employee) ),
+    name: employee.name
+  }
+  return person;
+
+
+  // step 2 - create a function that one employee object and returns a new object with the following properties
+// name = employees name
+// bonusPercentage = the bonus percent the employee is to receive
+// totalCompensation = base annual pay + bonus
+// totalBonus = the total bonus rounded to the nearest dollar
+}
+
 // step 1 - loop over employee array in a function
 function processBonuses (array) {
 
@@ -66,19 +83,3 @@ function calcPercent () {
   
 }
 
-function createEmployeeObject (employee) {
-  let person={
-    bonusPercent: calcPercent(employee),
-    totalBonus: Math.round(employee.annualSalary * calcPercent(employee) ),
-    totalCompensation: employee.annualSalary * Math.round(employee.annualSalary * calcPercent(employee) ),
-    name: employee.name
-  }
-  return person;
-
-
-  // step 2 - create a function that one employee object and returns a new object with the following properties
-// name = employees name
-// bonusPercentage = the bonus percent the employee is to receive
-// totalCompensation = base annual pay + bonus
-// totalBonus = the total bonus rounded to the nearest dollar
-}
